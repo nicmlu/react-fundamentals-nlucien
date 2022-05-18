@@ -6,20 +6,11 @@
   <script src="https://unpkg.com/react@18.1.0/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@18.1.0/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
-
   <script type="text/babel">
-    // 🐨 re-implement this using JSX!
-    // const element = React.createElement('div', {
-    //   className: 'container',
-    //   children: 'Hello World',
-    // })
-    const rootElement = document.getElementById('root')
-
-    const classNameVariable = 'container'
-    const elementTextContent = 'Hello World'
-    const element = (
-      <div className={classNameVariable}>{elementTextContent}</div>
-    )
+    const className = 'container'
+    const children = 'Hello World'
+    const props = {className, children}
+    const element = <div {...props}></div>
 
     // 💰 there are a few subtle differences between JSX and HTML. One such
     // difference is how you apply a class to an element in JSX is by using
@@ -27,6 +18,6 @@
     // 📜 You can learn the differences between JSX and HTML syntax from the React docs here:
     // https://reactjs.org/docs/dom-elements.html#differences-in-attributes
 
-    ReactDOM.createRoot(rootElement).render(element)
+    ReactDOM.createRoot(document.getElementById('root')).render(element)
   </script>
 </body>
