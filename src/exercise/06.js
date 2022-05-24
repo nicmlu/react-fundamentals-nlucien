@@ -19,13 +19,12 @@ function UsernameForm({onSubmitUsername}) {
 
   function handleSubmit(event) {
     event.preventDefault()
-    onSubmitUsername(event.target.elements.usernameInput.value)
+    onSubmitUsername(usernameInput)
   }
 
   function handleChange(event) {
     const {value} = event.target
-    const usernameInput = value.toLowerCase()
-    setUsernameInput(usernameInput)
+    setUsernameInput(value.toLowerCase())
   }
 
   // 🐨 add the onSubmit handler to the <form> below
