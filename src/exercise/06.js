@@ -18,7 +18,7 @@ function UsernameForm({onSubmitUsername}) {
   const inputEl = React.useRef(null)
 
   function handleSubmit(event) {
-    // event.preventDefault()
+    event.preventDefault()
     const username = inputEl.current.value
     onSubmitUsername(username)
   }
