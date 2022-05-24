@@ -15,9 +15,11 @@ function UsernameForm({onSubmitUsername}) {
   // 💰 For example: event.target.elements[0].value
   // 🐨 Call `onSubmitUsername` with the value of the input
 
+  const inputEl = React.useRef(null)
+
   function handleSubmit(event) {
-    event.preventDefault()
-    const username = event.target.elements[0].value
+    // event.preventDefault()
+    const username = inputEl.current.value
     onSubmitUsername(username)
   }
 
@@ -28,8 +30,8 @@ function UsernameForm({onSubmitUsername}) {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="username">Username:</label>
-        <input id="username" type="text" />
+        <label>Username:</label>
+        <input ref={inputEl} type="text" />
       </div>
       <button type="submit">Submit</button>
     </form>
